@@ -1,4 +1,4 @@
-[2:54 PM, 10/17/2023] Dharshini Clg: class BankAccount:
+class BankAccount:
 
   def _init_(self, account_number, account_holder_name, initial_balance):
     self.__account_number = account_number
@@ -21,24 +21,16 @@
 
   def display_balance(self):
     print(
-        f"Acc…
-[2:54 PM, 10/17/2023] Dharshini Clg: 2.1
-[2:54 PM, 10/17/2023] Dharshini Clg: class Player:
-    def play(self):
-        print("The player is playing cricket.")
+        f"Account balance for {self._account_holder_name} ({self.account_number}): ${self._account_balance}"
+    )
 
-class Batsman(Player):
-    def play(self):
-        print("The batsman is batting.")
 
-class Bowler(Player):
-    def play(self):
-        print("The bowler is bowling.")
+# Create an instance of BankAccount
+account = BankAccount("123456789", "John Doe", 1000.00)
 
-# Create objects of Batsman and Bowler classes
-batsman = Batsman()
-bowler = Bowler()
-
-# Call the play() method for each object
-batsman.play()
-bowler.play()
+# Test deposit and withdrawal functionality
+account.display_balance()
+account.deposit(500.00)
+account.withdraw(200.00)
+account.withdraw(1500.00)
+account.display_balance()
